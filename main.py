@@ -1,6 +1,10 @@
 import numpy as np
 import sys
 import bfs
+import dijkstra
+import ids
+import greedy
+import common
 
 args = sys.argv
 argc = len(args)
@@ -12,33 +16,30 @@ for i in range(array_size):
     array.append(int(args[i + 3]))
 array = np.array(array)
 
-if argc >= array_size + 4:
-    opt_print = args[array_size + 3]
+if argc >= array_size + 4 and args[array_size + 3] == 'PRINT':
+    opt_print = True
 else:
-    opt_print = None
+    opt_print = False
 
 if alg == 'B':
-    expl_list = bfs.BFS(array)
-    if opt_print == "PRINT":
-        for i in expl_list:
-            print(i)
+    result = bfs.BFS(array, opt_print)
 
 elif alg == 'I':
-    #iterative
-    pass
+    result = ids.IDS(array, opt_print)
 
 elif alg == 'U':
-    #uniform cost (dijkstra)
-    pass
-
+    result = dijkstra.Dijkstra(array, opt_print)
+    
 elif alg == 'A':
     #A*
     pass
 
 elif alg == 'G':
-    #greedy
-    pass
+    result = greedy.Greedy(array, opt_print)
 
 else:
     #error
     pass
+
+if result == 0:
+    print('failure')
