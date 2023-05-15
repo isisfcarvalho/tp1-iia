@@ -1,6 +1,5 @@
 import numpy as np
-from collections import OrderedDict
-from common import concatenate_array, getPath
+from common import concatenate_array, get_path, explore_node
 
 class NodeIDS:
   def __init__(self, array, cost, parent, depth):
@@ -12,12 +11,11 @@ class NodeIDS:
 
 def DFSLimited(origArray, limit, opt_print=False):
   root = NodeIDS(origArray, 0, None, 0)
-  goal = np.sort(origArray)
+  goal = np.arange(1, origArray.size + 1)
 
   frontier = []
   frontier.append(root)
   count_explored = 0
-  #result = -1
 
   while len(frontier) > 0:
     node = frontier.pop()
@@ -26,25 +24,18 @@ def DFSLimited(origArray, limit, opt_print=False):
     if np.array_equal(node.array, goal):
       print(f'Found solution using IDS, depth {node.depth}: {node.total_cost}, {count_explored}')
       if opt_print:
-        getPath(node)
+        get_path(node)
       result = 1
       break
 
     if node.depth + 1 > limit:
       result = 0
       continue
-
-    for i in range(node.array.size):
-      for j in range(i + 1, node.array.size):
-        new_array = node.array.copy()
-        new_array[i], new_array[j] = new_array[j], new_array[i]
-        if abs(j - i) == 1:
-          cost = 2
-        else:
-          cost = 4
-        child = NodeIDS(new_array, node.total_cost + cost, node, node.depth + 1)
-        #print(f"Novo array adicionado à fronteira: {child.array}, depth = {child.depth}")
-        frontier.append(child)
+    for child_array in explore_node(node):
+    
+      child = NodeIDS(child_array[0], node.total_cost + child_array[1], node, node.depth + 1)
+      #print(f"Novo array adicionado à fronteira: {child.array}, depth = {child.depth}")
+      frontier.append(child)
 
   return result
     
