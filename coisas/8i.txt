@@ -1,0 +1,46 @@
+Found solution using IDS, depth 6: 18, 10013
+5 3 7 2 8 1 4 6
+5 3 7 2 6 1 4 8
+5 3 7 2 1 6 4 8
+5 3 4 2 1 6 7 8
+5 3 2 4 1 6 7 8
+5 2 3 4 1 6 7 8
+1 2 3 4 5 6 7 8
+Time elapsed: 1.6099s
+Found solution using IDS, depth 6: 18, 10013
+5 3 7 2 8 1 4 6
+5 3 7 2 6 1 4 8
+5 3 7 2 1 6 4 8
+5 3 4 2 1 6 7 8
+5 3 2 4 1 6 7 8
+5 2 3 4 1 6 7 8
+1 2 3 4 5 6 7 8
+Time elapsed: 1.5631s
+Found solution using IDS, depth 6: 18, 10013
+5 3 7 2 8 1 4 6
+5 3 7 2 6 1 4 8
+5 3 7 2 1 6 4 8
+5 3 4 2 1 6 7 8
+5 3 2 4 1 6 7 8
+5 2 3 4 1 6 7 8
+1 2 3 4 5 6 7 8
+Time elapsed: 1.4112s
+Found solution using IDS, depth 6: 18, 10013
+5 3 7 2 8 1 4 6
+5 3 7 2 6 1 4 8
+5 3 7 2 1 6 4 8
+5 3 4 2 1 6 7 8
+5 3 2 4 1 6 7 8
+5 2 3 4 1 6 7 8
+1 2 3 4 5 6 7 8
+Time elapsed: 1.4389s
+Found solution using IDS, depth 6: 18, 10013
+5 3 7 2 8 1 4 6
+5 3 7 2 6 1 4 8
+5 3 7 2 1 6 4 8
+5 3 4 2 1 6 7 8
+5 3 2 4 1 6 7 8
+5 2 3 4 1 6 7 8
+1 2 3 4 5 6 7 8
+Time elapsed: 1.4285s
+Média dos tempos: 1.490332

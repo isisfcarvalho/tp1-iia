@@ -8,6 +8,7 @@ import astar
 import common
 import time
 
+# Tratamento de argumentos
 args = sys.argv
 argc = len(args)
 
@@ -33,6 +34,7 @@ elif argc < array_size + 4:
 
 times = []
 
+# Chamada dos algoritmos, por quantas iterações forem passadas como parâmetro (1 se não for passado nada)
 for _ in range(iters):
     start = time.time()
 
@@ -61,10 +63,10 @@ for _ in range(iters):
     else:
         print('Wrong algorithm parameter')
 
-    print('Time elapsed: {:.4f}s'.format(end-start))
+    #print('Time elapsed: {:.4f}s'.format(end-start))
     times.append(end-start)
 
     if result == 0:
         print('failure')
 
-print(f"Média dos tempos: {np.round(np.mean(times), 6)}")
+#print(f"Média dos tempos: {np.round(np.mean(times), 6)}")

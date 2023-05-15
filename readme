@@ -1,0 +1,21 @@
+Para rodar qualquer um dos algoritmos, basta digitar o seguinte comando na linha de comando:
+
+$python3 main.py alg tam_vetor vetor [PRINT] [n_reps]
+
+Em que alg é a inicial do algoritmo, tam_vetor é o tamanho do vetor de entrada, vetor são os números
+do vetor de entrada divididos por espaços.
+
+Um exemplo de execução é python3 main.py A 5 3 4 2 5 1 PRINT 5, que vai rodar o algoritmo A* sobre o 
+vetor [3 4 2 5 1], de tamanho 5, fazendo 5 iterações sobre esse mesmo vetor (e retornando os mesmos 
+resultados, é claro, os algoritmos são determinísticos) e imprimindo o caminho do vetor de entrada 
+até a solução, para cada iteração.
+
+O argumento PRINT é opcional, e no meu código em especial, dá pra fazer experimentos repetidos, 
+passando um parâmetro número logo após o PRINT (ou após o último elemento do vetor).
+
+No arquivo main.py, há alguns prints de cálculo de tempo comentados, para saber quanto tempo cada
+algoritmo leva, é só descomentar.
+
+No zip, também se encontra um arquivo chamado "bash.sh", que roda todos os algoritmos para um mesmo
+vetor de entrada, fazendo quantas iterações se desejar. É só rodar na linha de comando com o comando 
+$bash bash.sh. Porém o vetor deve ser inserido nesse script, assim como os parâmetros opcionais desejados
